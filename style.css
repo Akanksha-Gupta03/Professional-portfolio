@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600i,700&display=swap');
 
 body{
@@ -154,7 +156,7 @@ header .navbar ul li a.active::before{
 /*About Me*/
 .about-me{
     padding:100px 15px;
-    background-color: gray;
+    background-color:white;
 }
 
 .about-me .section-title{
@@ -220,12 +222,97 @@ header .navbar ul li a.active::before{
     font-weight: 400;
     margin: 24px;
     color: black;
+    margin: 0 0 20px;
 }
 .about-me .about-content .text .info{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.about-me .about-content .text .info .list{
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 10px;
+
+}
+.about-me .about-content .text .info .list label{
+    padding-right: 10px;
+    color: #000000;
+    font-weight: 600;
+    font-size: 15px;
+}
+.about-me .about-content .text .info .list p{
+    margin: 0;
+}
+.about-me .about-content .text .social-links{
+    padding-top: 30px;
+
+}
+.about-me .about-content .text .social-links a{
+    transition: all .5s ease;
+}
+
+.skills{
+    padding: 100px 15px;
+    background-color: #febd01;
+}
+.skills .skills-content{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 30px;
+}
+
+.skills .img{
+    background-color: blue;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.align-items-center{
+    align-items: center;
+}
+.skills .img img{
+    width: 100%;
+    display: block;
+}
+.skills .skills-content .section-title p{
+    font-size: 15px;
+    font-weight: 400;
+    color: #838383;
+    line-height: 24px;
+    margin: 15px 0 20px;
+}
+.skills .skills-content .skill-box{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+
+}
+
+.skills .skills-content .skill-box h6{
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 8px;
+}
+.skills .skills-content .skill-box .skill-bar{
+    height: 6px;
+    background-color: #eeeeee;
+    position: relative;
+}
+.skills .skills-content .skill-box .skill-bar .skill-bar-in{
+    background-color: #febd01;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+
+
 
 
 
