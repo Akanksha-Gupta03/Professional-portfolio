@@ -19,12 +19,15 @@
       <div class="brand-name">
         <a href="" class="logo">Akanksha</a>
       </div>
+      <div class="ham-burger">
+        <i class="fa fa-bars"></i>
+      </div>
       <div class="navbar">
         <ul>
-          <li> <a href="" class="active">Home</a></li>
-          <li> <a href="">About</a></li>
-          <li> <a href=""> Portfolio</a></li>
-          <li> <a href="">Contact</a></li>
+          <li> <a href="#home" class="active">Home</a></li>
+          <li> <a href="#about">About</a></li>
+          <li> <a href="#portfolio"> Portfolio</a></li>
+          <li> <a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -32,7 +35,7 @@
   </header>
   <!--End Header-->
   <!--Start home-->
-  <section class="home">
+  <section class="home" id="home">
     <div class="container">
       <div class="row full-screen">
         <div class="home-content">
@@ -51,7 +54,7 @@
   <!--End home-->
 
   <!--start about-->
-  <section class="about-me">
+  <section class="about-me" id="about">
     <div class="container">
       <div class="row">
         <div class="section-title">
@@ -155,13 +158,13 @@
   <!--end skill-->
 
   <!--Start portfolio-->
-  <div class="container-fluid">
-    <section>
-          <div class="row p-5">
-              <div class="col-12">
-                  <h2 class="heading">My Work</h2>
-              </div>
-          </div>    
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="section-title text-center">
+                <h1>My Work</h1>
+            </div>
+        </div> 
           <div class="row row-cols-3 justify-content-around p-3">
               <div class="col-4">
                 <a href="https://akanksha-gupta03.github.io/Homework-02/">
@@ -193,12 +196,16 @@
                     <img class="image6" src="https://www.makeareadme.com/images/open-graph-logo.png" />
                 </a>        
               </div>
+              <div class="col-4">
+                <a href="https://akanksha-gupta03.github.io/Good-Readme-Generator/">
+                    <img class="image6" src="" />
+                </a>
           </div>     
     </section>
     </div>
 
     <!--Start Contact -->
-    <section class="contact-us">
+    <section class="contact-us" id="contact">
         <div class="container">
             <div class="row">
                 <div class="section-title text-center">
@@ -236,6 +243,67 @@
         </div>
     </section>
     <!--End Contact -->
+
+    <!--Start footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="logo">
+                    Akanksha
+                </div>
+                <div class="social">
+                    <a href=""><i class="fa fa-facebook-official"></i></a>
+                    <a href=""><i class="fa fa-linkedin-square"></i></a>
+                    <a href=""><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+
+    <!--end footer-->
+    <!--start copyright-->
+    <section class="copyright">
+        <div class="container">
+            <p>&copy; 2020 copyright all right reserved</p>
+        </div>
+    </section>
+    <!--end copyright-->
+    <script>
+        window.onscroll = function (){
+            const docScrollTop=document.documentElement.scrollTop ;
+            if(window.innerWidth>991){
+                if(docScrollTop>100){
+                    document.querySelector("header").classList.add("fixed")
+                }
+                else{
+                    document.querySelector("header").classList.remove("fixed")
+
+                }
+                
+            } 
+        }
+
+        //navbar links
+        const navbar = document.querySelector(".navbar");
+        a=navbar.querySelectorAll("a");
+
+        a.forEach(function(element){
+            element.addEventListener("click",function(){
+                for(let i=0;i<a.length;i++){
+                    a[i].classList.remove("active");
+                }
+                this.classList.add("active")
+                document.querySelector(".navbar").classList.toggle("show");
+            })
+        })
+
+        //hamburger
+        const hamBurger = document.querySelector(".ham-burger");
+        hamBurger.addEventListener("click", function(){
+          document.querySelector(".navbar").classList.toggle("show");
+        })
+    </script>
 
 
 </body> 

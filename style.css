@@ -1,7 +1,10 @@
 
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     font-family: 'Poppins',  sans-serif;
@@ -25,8 +28,23 @@ header{
     right: 0px;
     border-bottom: 1px solid #423940;
     padding: 0px 15px;
-    z-index: 10;
+    z-index: 11;
 }
+header.fixed{
+    background-color: #ffffff;
+    position: fixed;
+    border-color: #eeeeee;
+    animation: fixHeader .5s ease;
+}
+@keyframes fixHeader{
+    0%{
+        transform: translateY(-100%);opacity: 0;
+    }
+    100%{
+    transform: translateY(-1%);
+    }
+}
+
 header .row{
     justify-content: space-between;
     align-items: center;
@@ -36,10 +54,14 @@ header .brand-name a{
    text-decoration: none;
    font-size: 22px;
    font-weight: 600;
-   color: black;
+   color:#000000;
    text-transform: uppercase;
    position: relative;
 }
+header.fixed .brand-name a{
+    color: #000000;
+}
+
 header .brand-name a.active::before{
     content: ''; 
     height: 3px;  
@@ -66,15 +88,23 @@ header .navbar ul li a{
     font-weight: 600;
     position: relative;
 }
+
+header.fixed .navbar ul li a{
+    color: #000000;
+}
 header .navbar ul li a::before{
     content: '';
     height: 3px;
-    background:black;
+    background: #000000;
     width:0%;
     position: absolute;
     right: 0px;
     bottom: -1px;
     transition: all .5s ease;
+}
+
+header.fixed .navbar ul li a::before{
+    color: #000000;
 }
 header .navbar ul li a:hover::before{
     width: 100%;
@@ -323,11 +353,13 @@ header .navbar ul li a.active::before{
 .heading{
     font-size: 35px;
     text-transform: uppercase;
+    margin-top: 30px;
 
 }
-.container-fluid{
-    background-color: #f5f8fd
+.portfolio .section-title h1:before{
+    left:30%;
 }
+
 .image1{
     height: 300px;
     width: 300px;
@@ -445,6 +477,168 @@ header .navbar ul li a.active::before{
     background-color: #000000;
     color: #ffffff;
 }
+
+/*footer*/
+
+footer{
+    padding: 20px 15px;
+    background-color: #0c0c17;
+}
+footer .logo{
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 45px;
+    color: #ffffff;
+    font-weight: 500;
+}
+ footer .social{
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    padding-top: 15px;
+ }
+ footer .social a{
+     color: #999999;
+     text-decoration: none;
+     display: inline-block;
+     margin: 0px 12px;
+     transition: all .5s ease;
+     text-decoration: none;
+ }
+ footer .social a:hover{
+     color: #ffffff;
+ }
+ /*copyright*/
+ .copyright{
+     background-color: #0c0c17;
+     border-top: 1px solid #1d1d27;
+ }
+ .copyright p{
+     color: #838383;
+     margin: 0;
+     text-align: center;
+     font-weight: 400;
+     font-size: 15px;
+ }
+
+ .ham-burger .fa{
+     font-size: 20px;
+     height: 30px;
+     width: 35px;
+     border-radius: 3px;
+     line-height: 30px;
+     text-align: center;
+     cursor: pointer;
+     display: none;
+     color: #000000;
+     border: 1px solid #eeeeee;
+     background-color: #ffffff;
+
+ }
+
+ @media(max-width: 991px){
+     .home .home-content .block h1{
+         font-size: 50px;
+     }
+ }
+ @media(max-width: 767px){
+     .home .home-content .block h1{
+         font-size: 40px;  
+     }
+     .home .home-content .block h3{
+         font-size: 25px;
+     }
+     header{
+         padding: 15px;
+         position: fixed;
+         background-color:#ffffff;
+         border: none;
+         border-bottom: 1px solid #eeeeee;
+     }
+     header .brand-name a{
+         color:#000000
+     }
+     .ham-burger .fa{
+         display: inline-block;
+     }
+    .navbar{
+        position: absolute;
+        background-color:#ffffff;
+        width: 100%;
+        left: 0px;
+        top: 60px;
+        padding: 15px;
+        border: 1px solid #eeeeee;
+        display: none;
+        border-bottom: 1px solid #eeeeee;
+    }
+    .navbar .show{
+        display: block;
+    }
+    header .navbar ul li{
+        display: block;
+        margin-left: 0;
+    }
+    header .navbar ul li a{
+        line-height: 42px;
+        color: #000000;
+    }
+    header .navbar ul li a::before{
+        background-color: #febd01;
+    }
+    .about-me .about-content .text{
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0px;
+        padding-top: 30px;
+    }
+    .about-me .about-content .img{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .skills .skills-content{
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0px; 
+    }
+    .skills .img{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .portfolio{
+        flex: 0 0 100%;
+        max-width: 50%;
+        position: relative;
+        padding: 8px;
+    }
+    .contact-us .contact-form{
+        padding: 40px 20px;
+    }
+    .contact-us .contact-form .col-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+ }
+ @media(max-width: 500px){
+    .home .home-content .block h1{
+        font-size: 30px;  
+    }
+    .home .home-content .block h3{
+        font-size: 20px;
+    }
+    .home .home-content .block{
+        padding-left: 20px;
+    }
+    .portfolio{
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+    .about-me .about-content .text .info .list p{
+        flex: 0 0 100%;
+    }
+}
+
 
 
 
